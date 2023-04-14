@@ -1,0 +1,42 @@
+/*
+ * Copyright (c) 2023.
+ * Created by Jan Boer for SEPT 4IT3
+ * I Jan Boer, 0862551 certify that this material is my original work.
+ * No other person's work has been used without due acknowledgement. I have also not made my work available to anyone else without it being acknowledged.
+ */
+
+body {
+    counter-reset: section
+}
+
+h2 {
+    counter-reset: sub-section
+}
+
+h3 {
+    counter-reset: composite
+}
+
+h4 {
+    counter-reset: detail
+}
+
+h2:before {
+    counter-increment: section;
+    content: counter(section) " ";
+}
+
+h3:before {
+    counter-increment: sub-section;
+    content: counter(section) "." counter(sub-section) " ";
+}
+
+h4:before {
+    counter-increment: composite;
+    content: counter(section) "." counter(sub-section) "." counter(composite) " ";
+}
+
+h5:before {
+    counter-increment: detail;
+    content: counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";
+}
